@@ -1,6 +1,116 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch:600');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500');
+body{
+  background-color: black;
+}
+.App{
+  color: white;
 }
 #Login{
-  border: 3px solid black;
+  border: 2px solid white;
+  font-family: 'Chakra Petch', sans-serif;
+  width: 43vw;
+  border-radius: 5px;
+  height: 28vh;
+  position:absolute;
+  left:0; right:0;
+  top:0; bottom:0;
+  margin:auto;
+  max-width:100%;
+  max-height:100%;
+  overflow:auto;
+  text-align: center;
+}
+
+#textLogin{
+  font-size: 20px;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+}
+
+#title{
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 100px;
+  color: white;
+  text-align: center;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url(https://zupimages.net/up/19/11/nwzt.png) no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+    opacity: 0.7;
+    filter:hue-rotate(30deg)
+}
+
+input[type=text]:focus {
+  border: 3px solid white;
+}
+
+input[type=text] {
+  font-family: 'Roboto Mono', monospace;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  outline: none;
+  border: 3px solid #bababa;
+  width: 23vw;
+  height: 5vh;
+  text-align: center;
+  font-size: 20px;
+}
+
+.button {
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 4vh;
+  background-color: white;
+  width: 24vw;
+  height: 6vh;
+  border: none;
+  color: #002318;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+}
+
+#formLogin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upgrade{
+  border: 2px solid red;
+  flex-direction: row;
+  display: flex;
+
+}
+.upgrade:hover{
+  background-color: grey;
+}
+.imgUpgrade{
+  width: 60px;
+  height: 60px;
+}
+.infoUpgrade{
+  display: flex;
+  flex-direction: column;
+  margin: -1px;
+  margin-left: 2px;
+  font-size: 10px;
+}
+.nameUpgrade{
+  font-size: 20px;
+  font-weight: bold;
+  margin: -1px;
+  margin-left: 2px;
+
 }

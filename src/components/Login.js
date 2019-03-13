@@ -17,10 +17,10 @@ export default class Login extends Component {
   render() {
     return (
       <div id="Login">
-      <p>login</p>
-      <form onSubmit={this.sendPlayerName}>
+      <p id="textLogin" >Enter your name: </p>
+      <form id="formLogin" onSubmit={this.sendPlayerName}>
 	      <input value={this.state.name} type="text" onChange={this.changeName}/>
-	      <input type="Submit" value="Login"/>
+	      <input className="button"type="Submit" value="Login"/>
       </form>
       </div>
     );
