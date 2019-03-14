@@ -19,7 +19,8 @@ export default class Menu extends Component {
 	    		<img id="shop" src={require('../img/Settings.png')} onClick={() => this.settingsFunction()}/>
     		</div>
     		<div id="menuRight">
-    		    <img id="shop" src={require('../img/About.png')} onClick={() => clickFunction("shop")}/>
+    		    <img id="shop" src={require('../img/About.png')} onClick={() => clickFunction("about")}/>
+    		    <img id="shop" src={require('../img/pc.png')} onClick={() => clickFunction("pcUpgrade")}/>
     		</div>
       	</div>
     );

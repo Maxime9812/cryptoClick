@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Shop from './Shop'
+import PcUpgrade from './PcUpgrade'
 import InfoBar from './InfoBar'
 import Menu from './Menu'
+import About from './About'
 import Miner from './Miner'
 import Sound from 'react-sound'
 import img1 from '../img/BG1.jpg'
@@ -78,20 +80,17 @@ export default class Game extends Component {
 	updateCoin(){
 		this.setState({coin: this.state.coin+this.state.ppc})
 	}
-	incrementPpc(){
-		this.setState({ppc: this.state.ppc+this.state.upgradeLvl})
-	}
 	upgrade(price,nbP,id,type){
 		
 		switch(type){
 			case "ppc": this.state.upgradesPPC[id] = this.state.upgradesPPC[id]+ 1;
+			console.log(this.state.upgradesPPC[id])
 						this.setState({coin: this.state.coin-price,ppc: this.state.ppc+ parseInt(nbP)})
 			break;
 			case "pps": this.state.upgradesPPS[id] = this.state.upgradesPPS[id]+ 1;
 						this.setState({coin: this.state.coin-price,pps: this.state.pps+parseInt(nbP)})
 						if(this.state.level < parseInt(id)+1){
 							this.setState({level: parseInt(id)+1})
-							this.changeBackground()
 						}
 			break;
 		}
@@ -107,14 +106,42 @@ export default class Game extends Component {
 
   render() {
   	switch(this.state.page){
-  		case "shop": this.changeBackground()
+  		case "pcUpgrade": this.changeBackground()
   					return (
 			      <div className="App">
 			      <img id="imgBackground" src={this.backGround}/>
 				    <div id="windows"  draggable="false">
 				    	<div id="desktop">
 					    	<Menu stopTime={this.stopTime} clickFunction={this.setPage}/>
-					    	<Shop upgradesPPS={this.state.upgradesPPS} upgradesPPC={this.state.upgradesPPC} myCoin={this.state.coin} gameFunction={this.upgrade}/>
+					    	<PcUpgrade upgradesPPS={this.state.upgradesPPS} myCoin={this.state.coin} gameFunction={this.upgrade}/>
+				    	</div>
+				    </div>
+				    <InfoBar id="infoBar" pps={this.state.pps} playerName={this.props.playerName} coin={this.state.coin} ppc={this.state.ppc}/>
+			      </div>
+		    );
+  		break;
+  		case "shop":
+  					return (
+			      <div className="App">
+			      <img id="imgBackground" src={this.backGround}/>
+				    <div id="windows"  draggable="false">
+				    	<div id="desktop">
+					    	<Menu stopTime={this.stopTime} clickFunction={this.setPage}/>
+					    	<Shop upgradesPPC={this.state.upgradesPPC} myCoin={this.state.coin} gameFunction={this.upgrade}/>
+				    	</div>
+				    </div>
+				    <InfoBar id="infoBar" pps={this.state.pps} playerName={this.props.playerName} coin={this.state.coin} ppc={this.state.ppc}/>
+			      </div>
+		    );
+  		break;
+  		case "about":
+  					return (
+			      <div className="App">
+			      <img id="imgBackground" src={this.backGround}/>
+				    <div id="windows"  draggable="false">
+				    	<div id="desktop">
+					    	<Menu stopTime={this.stopTime} clickFunction={this.setPage}/>
+					    	<About/>
 				    	</div>
 				    </div>
 				    <InfoBar id="infoBar" pps={this.state.pps} playerName={this.props.playerName} coin={this.state.coin} ppc={this.state.ppc}/>
