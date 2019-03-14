@@ -243,3 +243,9 @@ video {
   opacity: 0;
   transition: opacity .1s, width .1s;
 }
+#resume{
+  text-align: center;
+  margin-top: 40vh;
+  display: flex;
+  flex-direction: column;
+}

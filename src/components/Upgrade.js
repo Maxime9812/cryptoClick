@@ -6,24 +6,25 @@ export default class Upgrade extends Component {
 		this.verifCoin = this.verifCoin.bind(this)
 	}
 	verifCoin(){
-		var price = this.props.prix*this.props.upgradeLvl[this.props.id]*1.4
-		var gain = this.props.prix*this.props.upgradeLvl[this.props.id]
-		if(this.props.myCoin >= this.props.prix*this.props.upgradeLvl[this.props.id]*1.4){
-			this.props.gameFunction(this.props.prix*this.props.upgradeLvl[this.props.id]*1.4,this.props.prix*this.props.upgradeLvl[this.props.id],this.props.id,this.props.type)
+		var price = Math.floor(this.props.prix*(Math.pow(2.5,this.props.upgradeLvl[this.props.id])))
+		var gain = this.props.gain
+		if(this.props.myCoin >= price){
+			this.props.gameFunction(price,gain,this.props.id,this.props.type)
 		}else{
 			window.alert("NON")
 		}
 	}
 
   render() {
-  	const {name,prix,upgradeLvl,src,id} = this.props
+  	const {name,prix,upgradeLvl,src,id,gain} = this.props
     return (
     	<div className="upgrade" onClick={this.verifCoin}>
 	    	<img className="imgUpgrade" src={src}/>
 	    	<div className="infoUpgrade">
 		    	<p className="nameUpgrade" >{name}</p>
-		    	<p className="infoUpgrade" >price : {prix*upgradeLvl[id]*1.4}</p>
-		    	<p className="infoUpgrade" >gain : {prix*upgradeLvl[id]}</p>
+		    	<p className="infoUpgrade" >price : {Math.floor(prix*(Math.pow(2.5,upgradeLvl[id])))}</p>
+		    	<p className="infoUpgrade" >gain : {gain}</p>
+		    	<p className="infoUpgrade" >Lvl : {upgradeLvl[id]}</p>
 	    	</div>
     	</div>
     );

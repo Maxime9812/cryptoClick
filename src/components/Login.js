@@ -17,7 +17,11 @@ export default class Login extends Component {
 	}
 	sendPlayerName(event){
 		event.preventDefault();
-		this.props.appFunction(this.state.name)
+		if(this.state.name != ""){
+			this.props.appFunction(this.state.name)
+		}else{
+			window.alert("Name is empty")
+		}
 	}
 	changePage(event){
 		this.setState({page: event})

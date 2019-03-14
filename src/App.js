@@ -6,18 +6,23 @@ import Game from './components/Game';
 class App extends Component {
   constructor(props){
     super(props)
-    this.changePlayerName = this.changePlayerName.bind(this)
+    this.startGame = this.startGame.bind(this)
+    this.changeToHome = this.changeToHome.bind(this)
     this.state = {page: "Home",playerName: ""}
   }
-  changePlayerName(event){
-    this.setState({playerName: event,page: "Game"})
-    console.log(this.state)
+  startGame(event){
+    this.setState({playerName: event,page:"Game"})
   }
+
+  changeToHome(){
+    this.setState({page: "Home"})
+  }
+
   render() {
     switch(this.state.page){
-      case "Home": return(<Home appFunction={this.changePlayerName}/>);
+      case "Home": return(<Home appFunction={this.startGame}/>);
       break
-      case "Game": return(<Game playerName={this.state.playerName}/>);
+      case "Game": return(<Game returnHome={this.changeToHome}playerName={this.state.playerName}/>);
       break
     }
   }
