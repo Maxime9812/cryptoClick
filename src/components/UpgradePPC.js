@@ -9,7 +9,7 @@ export default class Upgrade extends Component {
 		var price = Math.floor(this.props.prix*(Math.pow(2.5,this.props.upgradeLvl[this.props.id])))
 		var gain = this.props.gain
 		if(this.props.myCoin >= price){
-			this.props.gameFunction(price,gain,this.props.id,this.props.type)
+			this.props.gameFunction(price,gain,this.props.id,"ppc")
 		}else{
 			window.alert("NON")
 		}
