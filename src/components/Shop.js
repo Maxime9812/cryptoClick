@@ -3,11 +3,11 @@ import UpgradePPC from './UpgradePPC'
 
 export default class Shop extends Component {
   render() {
-  	const {upgradesPPC} = this.props
+  	const {upgradesPPC,deletePage} = this.props
   	    return (
 				<div id="shopMenu">
 		    		<div id="quitBar">
-		    		<img id="quitIcons" src={require("../img/dots.png")} />
+		    		<img id="quitIcons" src={require("../img/dots.png")} onClick={() => deletePage("shop")} />
 		    		</div>
 				    <div id="shopContaine">
 					    <UpgradePPC src={require("../img/chip.png")} prix="10" name="Intel Celeron" upgradeLvl={upgradesPPC} id="1" myCoin={this.props.myCoin} gameFunction={this.props.gameFunction}/>

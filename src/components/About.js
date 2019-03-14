@@ -3,15 +3,21 @@ import UpgradePPC from './UpgradePPC'
 
 export default class Shop extends Component {
   render() {
-  	const {upgradesPPC} = this.props
+  	const {upgradesPPC,deletePage} = this.props
   	    return (
-				<div id="about">
+  	    	<div id="shopMenu">
+  	    		<div id="quitBar">
+		    		<img id="quitIcons" src={require("../img/dots.png")} onClick={() => deletePage("about")} />
+		    	</div>
+  	    		<div id="about">
 					<p>
-						<a>Mathis</a>
-						<a>William</a>
-						<a>Maxime</a>
+						<a href="https://github.com/MathisTimo" target="blank">Mathis</a>
+						<a href="https://github.com/williamandrieu" target="blank">William</a>
+						<a href="https://github.com/Maxime9812" target="blank">Maxime</a>
 					</p>
 		      	</div>
+		    </div>
+				
     		);
   }
 }

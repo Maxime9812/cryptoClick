@@ -113,7 +113,7 @@ export default class Game extends Component {
 				    <div id="windows"  draggable="false">
 				    	<div id="desktop">
 					    	<Menu stopTime={this.stopTime} clickFunction={this.setPage}/>
-					    	<PcUpgrade upgradesPPS={this.state.upgradesPPS} myCoin={this.state.coin} gameFunction={this.upgrade}/>
+					    	<PcUpgrade deletePage={this.setPage} upgradesPPS={this.state.upgradesPPS} myCoin={this.state.coin} gameFunction={this.upgrade}/>
 				    	</div>
 				    </div>
 				    <InfoBar id="infoBar" pps={this.state.pps} playerName={this.props.playerName} coin={this.state.coin} ppc={this.state.ppc}/>
@@ -127,7 +127,7 @@ export default class Game extends Component {
 				    <div id="windows"  draggable="false">
 				    	<div id="desktop">
 					    	<Menu stopTime={this.stopTime} clickFunction={this.setPage}/>
-					    	<Shop upgradesPPC={this.state.upgradesPPC} myCoin={this.state.coin} gameFunction={this.upgrade}/>
+					    	<Shop deletePage={this.setPage} upgradesPPC={this.state.upgradesPPC} myCoin={this.state.coin} gameFunction={this.upgrade}/>
 				    	</div>
 				    </div>
 				    <InfoBar id="infoBar" pps={this.state.pps} playerName={this.props.playerName} coin={this.state.coin} ppc={this.state.ppc}/>
@@ -141,7 +141,7 @@ export default class Game extends Component {
 				    <div id="windows"  draggable="false">
 				    	<div id="desktop">
 					    	<Menu stopTime={this.stopTime} clickFunction={this.setPage}/>
-					    	<About/>
+					    	<About deletePage={this.setPage}/>
 				    	</div>
 				    </div>
 				    <InfoBar id="infoBar" pps={this.state.pps} playerName={this.props.playerName} coin={this.state.coin} ppc={this.state.ppc}/>
@@ -155,7 +155,7 @@ export default class Game extends Component {
 				    <div id="windows" src={require('../img/BG1.jpg')} draggable="false">
 				    	<div id="desktop">
 					    	<Menu stopTime={this.stopTime} clickFunction={this.setPage} />
-					    	<Miner coinMine={this.updateCoin}/>
+					    	<Miner deletePage={this.setPage} coinMine={this.updateCoin}/>
 				    	</div>
 				    </div>
 				    <InfoBar id="infoBar" pps={this.state.pps} playerName={this.props.playerName} coin={this.state.coin} ppc={this.state.ppc}/>
