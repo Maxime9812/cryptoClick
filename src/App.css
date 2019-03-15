@@ -5,6 +5,19 @@
 body{
   background-color: black;
 }
+a{
+  text-decoration: none;
+}
+.gitName:hover{
+  text-decoration: none;
+  color: black;
+}
+.gitName:visited{
+  color: white;
+}
+.gitName:visited:hover{
+  color: grey;
+}
 .App{
   color: white;
 }
@@ -22,6 +35,7 @@ body{
   max-height:100%;
   overflow:auto;
   text-align: center;
+  margin-top: 300px;
 }
 
 #textLogin{
@@ -35,6 +49,7 @@ body{
   font-size: 100px;
   color: white;
   text-align: center;
+  margin-top: 100px;
 }
 
 video {
@@ -109,7 +124,7 @@ video {
 }
 #windows{
   width: 100vw;
-  height: 93.2vh;
+  height: 93.7vh;
   position: relative;
 }
 #imgBackground{
@@ -148,6 +163,7 @@ video {
 }
 #quitBar{
   height: 20px;
+
 }
 #quitIcons{
   width: 50px;
@@ -209,6 +225,7 @@ video {
   margin:auto;
   margin-top: 100px;
 }
+
 #imgMiner{
   margin: auto;
 }
@@ -236,12 +253,12 @@ video {
 }
 
 
-#divMiner:active > #eclats { 
+#Miner:active > #eclats { 
   opacity: 1;
 }
 
 
-#divMiner:active > #pioche { transform: rotate(60deg); }
+#Miner:active > #pioche { transform: rotate(60deg); }
 
 #coin{
   z-index: 1;
@@ -267,12 +284,13 @@ video {
 }
 
 /* -------- BAR BOTTOM -------- */
+
 #infoBar{
   font-family: 'Kanit', sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #3b5cc6
+  background-color: #000000a3;
 }
 .miniCoin{
   height: 15px;
@@ -283,4 +301,25 @@ video {
 .coinDiv{
   display: flex;
   flex-direction: row;
+}
+
+/* -------- PAUSE MENU -------- */
+
+.pauseText{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+/* -------- ABOUT MENU -------- */
+
+#about{
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+#timeText{
+  font-size: 20px;
 }

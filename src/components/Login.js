@@ -17,8 +17,11 @@ export default class Login extends Component {
 	}
 	sendPlayerName(event){
 		event.preventDefault();
-		if(this.state.name != ""){
+		console.log(this.state.name.length)
+		if(this.state.name != "" && this.state.name.length <= 20){
 			this.props.appFunction(this.state.name)
+		}else if(this.state.name.length >= 20){
+			window.alert("Name to long max 20 char")
 		}else{
 			window.alert("Name is empty")
 		}

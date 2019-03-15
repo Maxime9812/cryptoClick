@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Game from './components/Game';
+import Sound from 'react-sound'
+import backgroundSound from './sound/backgroundjazzy.mov'
+
 
 class App extends Component {
   constructor(props){
@@ -22,7 +25,11 @@ class App extends Component {
     switch(this.state.page){
       case "Home": return(<Home appFunction={this.startGame}/>);
       break
-      case "Game": return(<Game returnHome={this.changeToHome}playerName={this.state.playerName}/>);
+      case "Game": return(
+        <div>
+        <Sound url={backgroundSound} playStatus={Sound.status.PLAYING} onFinishedPlaying={this.stopSound} volume={15} muted={false}/>
+        <Game returnHome={this.changeToHome}playerName={this.state.playerName}/>
+        </div>);
       break
     }
   }
